@@ -224,7 +224,8 @@ def get_transform_object(js: str, var: str) -> List[str]:
     regex = re.compile(pattern, flags=re.DOTALL)
     transform_match = regex.search(js)
     if not transform_match:
-        raise RegexMatchError(caller="get_transform_object", pattern=pattern)
+        pass
+        #raise RegexMatchError(caller="get_transform_object", pattern=pattern)
 
     return transform_match.group(1).replace("\n", " ").split(", ")
 
